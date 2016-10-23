@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<!--alchors:定义猫连接-->
+<!--lockAnchors 是否锁定锚链接-->
+<!--loopTop滚动到最顶部是否连续滚动到底部-->
+<!--loopBottom滚动到最底部是否连续滚动到顶部-->
+<!--loopHorizontal横向slider幻灯片是否循环滚动-->
+<!--autoScrolling是否使用插件的滚动方式 默认为true-->
+<!--scrollBar 是否包含滚动条 默认为false-->
+<!--paddingTop/paddingBottom 设置每一个section顶部和底部的padding 默认为0-->
+<!--fixElements 固定的元素 默认为null 需要配置jquery的选择器-->
+<!--keyboardScrolling是否可以使用键盘方向键导航-->
+<!--touchSensity 在移动设备滑动页面的敏感性 默认为5-->
+<!--continuousVertical收否循环滚动 默认为false-->
+<!--animateAnchor 锚链接是否可以控制滚动画面 默认为true-->
+<!--recordHistory 收否记录历史 默认为true-->
+<!--menu 绑定菜单 设定的相关属性与anchors的值对应 ，默认为false-->
+<!--navigation是否显示导航 默认为false-->
+<!--navigationPosition 导航小圆点的位置 可以设置为left或者right-->
+<!--navigationTooltips导航小圆点的tooltip设置，默认为[]-->
+<!--showActiveTooltip是否显示当前页面的导航的tooltip的信息 默认为false-->
+<!--slidesNavigation：是否洗钱案时横向幻灯片的导航信息 默认为false-->
+<!--slideNavPosition 横向幻灯片导航的位置 默认为bottom 可以设置top和bottom-->
+<!--scrollOverflow:内容超过满屏后是否显示滚动条 默认为false-->
+<!--sectionSelector：section的选择器，默认为.section-->
+<!--slideSector:slide的选择器，默认为.slide-->
+
+<!--fullpage方法的使用-->
+<!--$.fn.fuupage.xxx()  例如-->
+<!--$fn.fullpage.moveSectionUp-->
+<!--$fn.fullpage.moveSectionDown-->
+<!--slideMoveTo(section,slide):滚动到第几页 和moveTo一样 但没有动画效果-->
+<!--moveSlideRight 幻灯片向右滚动-->
+<!--moveSlideLeft 幻灯片向左滚动-->
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>fullpage实例</title>
+    <link rel="stylesheet" href=
+            "https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.css">
+
+</head>
+<body>
+<div id="fullpage">
+    <div class="section"><h1>这是第一屏</h1></div>
+    <div class="section">
+        <!--幻灯片-->
+        <div class="slide">slide</div>
+        <div class="slide">slide</div>
+        <div class="slide">slide</div>
+        <div class="slide">slide</div>
+    </div>
+    <div class="section active"><h1>这是第三屏</h1></div>
+    <div class="section"><h1>这是第四屏</h1></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.js"></script>
+<!--激活fullpage-->
+<script>
+    $(document).ready(function(){
+        $('#fullpage').fullpage({
+        sectionsColor:['green','orange','pink','red'],/*可以为每个section设置background-color属性*/
+           /* controlArrows:false,/!*定义是否通过箭头控制slide幻灯片*!/
+            verticalCentered:false/!*每个页面内容是否居中*!/
+            resize/!*字体是否随着窗口缩放而缩放*!/*/
+           /* scrollingSpeed:2000*/
+           anchors:['page1','page2','page3','page4',],
+//            css3:true
+          /*  loopTop:true,
+            loopBottom:true,
+            loopHorizontal:true*/
+            /*autoScrolling:true,
+            scrollBar:true*/
+            /*paddingTop:'200px',
+            paddingBottom:'200px'*/
+           /* navigation:true,
+            navigationPosition:'right',
+            navigationTooltips:['page1','page2','page3','page4',],
+            showActiveTooltip:true,
+            slidesNavigation:true,
+            slidesNavPosition:'top'*/
+            afterLoad:function(anchorLink,index){
+                console.log("afterLoad:anchorLink="+anchorLink
+                +";index="+index);
+
+            }
+
+
+
+        });
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>fullpage实例</title>
+    <link rel="stylesheet" href=
+            "https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.css">
+    <style>
+        body{
+            color: #fff;
+        }
+        .section1{
+           background-color: gray;
+        }
+        .section2{
+            background-color: orange;
+        }
+
+        .section3{
+            background-color: pink;
+        }
+        .section4{
+            background-color: blue;
+        }
+        .slide{
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+   <div id="fullpage">
+       <div class="section section1"><h1>这是第一屏</h1></div>
+       <div class="section section2">
+           <!--幻灯片-->
+           <div class="slide">slide</div>
+           <div class="slide">slide</div>
+           <div class="slide">slide</div>
+           <div class="slide">slide</div>
+       </div>
+       <div class="section section3"><h1>这是第三屏</h1></div>
+       <div class="section section4"><h1>这是第四屏</h1></div>
+   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.js"></script>
+  <!--激活fullpage-->
+<script>
+    $(document).ready(function(){
+        $('#fullpage').fullpage();
+    })
+</script>
+</body>
+</html>
